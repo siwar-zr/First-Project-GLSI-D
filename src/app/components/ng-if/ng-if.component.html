@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-3">
+        <div class="bg-success p-3" *ngIf="div1Visible">
+            Div 1
+        </div> 
+    </div>
+    <div class="col-3">
+        <div class="bg-primary p-3" *ngIf="number1 == number2">
+            Div 2
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="bg-danger p-3" *ngIf="isChecked">
+            Div 3
+        </div>
+    </div>
+</div>
+
+<div class="row pt-2">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger" (click)="hideDiv1()"> Hide</button>
+        <button class="btn btn-success" (click)="showDiv1()"> Show</button>
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="number1"/>
+        <input type="text" [(ngModel)]="number2"/>
+    </div>
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isChecked" />
+        --{{isChecked}}
+    </div>
+</div>
