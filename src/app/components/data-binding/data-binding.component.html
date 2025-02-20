@@ -1,11 +1,39 @@
 <div class="row">
     <div class="col-6">
         1. Interpolation
-        <br>
-        <p>First Name: {{firstName}}</p>
+        <p>First Name : {{firstName}}</p>
         <div>
-            année: {{annee}}
+            année : {{annee}}
         </div>
         <span>{{isActive}}</span>
+    </div>
+    <div class="col-6">
+        2. Property Binding
+        <br>
+        <input type="text" [value]="firstName">
+        <br>
+        <input type="text" [placeholder]="myPlaceHolder">
+        <br>
+        <div [class]="divClassName" style="height: 100px; width: 100px;">
+            salut
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showWelcomeMessage()"> Show Alert </button>
+    </div>
+    <div class="col-3">
+        <select (change)="onCityChange()" name="" id="">
+            <option value="Tunis">Tunis</option>
+            <option value="Nabeul">Nabeul</option>
+            <option value="Beja">Beja</option>
+            <option value="Touzeur">Touzeur</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <input type="text" [(ngModel)]="firstName">
     </div>
 </div>
