@@ -1,0 +1,55 @@
+<div class="container">
+    <form class="row g-3 needs-validation" >
+        <div class="col-md-4">
+          <label >First name</label>
+          <input type="text" name="firstName" [(ngModel)]="userObj.firstName" class="form-control" >
+          
+        </div>
+        <div class="col-md-4">
+          <label >Last name</label>
+          <input type="text" name="lastName" [(ngModel)]="userObj.lastName" class="form-control" >
+          
+        </div>
+        <div class="col-md-4">
+          <label >Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
+            <input type="text" name="userName" [(ngModel)]="userObj.userName" class="form-control"  aria-describedby="inputGroupPrepend" >
+            
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label >City</label>
+          <input type="text" name="city" [(ngModel)]="userObj.city" class="form-control" >
+          
+        </div>
+        <div class="col-md-3">
+          <label >State</label>
+          <select class="form-select" name="state" [(ngModel)]="userObj.state" >
+            <option selected disabled value="">Choose...</option>
+            <option value="Nabeul">Nabeul</option>
+            <option value="Tunis">Tunis</option>
+            <option value="Beja">Beja</option>
+          </select>
+          
+        </div>
+        <div class="col-md-3">
+          <label >Zip</label>
+          <input type="text" name="zipCode" [(ngModel)]="userObj.zipCode" class="form-control" >
+          
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" name="isTermsAgreed" [(ngModel)]="userObj.isTermsAgreed" type="checkbox" value="" >
+            <label >
+              Agree to terms and conditions
+            </label>
+            
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="button" (click)="onSave()">Submit form</button>
+        </div>
+      </form>
+</div>
+
