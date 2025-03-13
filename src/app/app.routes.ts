@@ -4,6 +4,7 @@ import { DataBindingComponent } from './components/data-binding/data-binding.com
 import { NgClassComponent } from './components/ng-class/ng-class.component';
 import { TemplateFormComponent } from './components/forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './components/forms/reactive-form/reactive-form.component';
+import { GetAPIComponent } from './components/API/get-api/get-api.component';
 
 export const routes: Routes = [
     {
@@ -30,5 +31,9 @@ export const routes: Routes = [
     {
         path:'reactive-form',
         component:ReactiveFormComponent
+    },
+    {
+        path:'get-api',
+        component:GetAPIComponent
     }
 ];

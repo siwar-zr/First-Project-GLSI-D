@@ -1,14 +1,19 @@
 <div class="container">
-    <form class="row g-3 needs-validation" >
+    <form #form="ngForm" class="row g-3 needs-validation" >
         <div class="col-md-4">
-          <label >First name</label>
-          <input type="text" name="firstName" [(ngModel)]="userObj.firstName" class="form-control" >
-          
+          <label >First name <span class="text-danger">*</span> </label>
+          <input type="text" #fname="ngModel" required name="firstName" [(ngModel)]="userObj.firstName" class="form-control" >
+          @if (fname.errors?.['required'] && fname.touched && fname.dirty) {
+            <span class="text-danger">This is Required</span>
+          }
         </div>
         <div class="col-md-4">
           <label >Last name</label>
-          <input type="text" name="lastName" [(ngModel)]="userObj.lastName" class="form-control" >
-          
+          <input type="text" name="lastName" required minlength="4" #lName="ngModel" [(ngModel)]="userObj.lastName" class="form-control" >
+          <div class="text-danger">
+            <span *ngIf="lName.errors?.['required'] && lName.touched">This is Required</span>
+            <span *ngIf="lName.errors?.['minlength'] && lName.touched">Min Length is 4</span>
+          </div>          
         </div>
         <div class="col-md-4">
           <label >Username</label>
@@ -48,7 +53,7 @@
           </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" type="button" (click)="onSave()">Submit form</button>
+          <button class="btn btn-primary" [disabled]="form.invalid" type="button" (click)="onSave()">Submit form</button>
         </div>
       </form>
 </div>
