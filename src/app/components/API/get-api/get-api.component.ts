@@ -9,14 +9,14 @@ import { Component } from '@angular/core';
 })
 export class GetAPIComponent {
 
-  userList: any[] = [];
-  productList: any[] = [];
+  userList: any [] = [];
+  productList : any [] = [];
 
-  constructor (private http : HttpClient) {
+  constructor (private http: HttpClient){
 
   }
 
-  getUsers(){
+  getUsers() {
     this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((result:any) => {
       this.userList = result;
     })

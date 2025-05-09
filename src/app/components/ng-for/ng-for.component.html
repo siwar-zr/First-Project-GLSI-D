@@ -1,48 +1,89 @@
 <div class="row">
+    <div class="col-3">
+        courseName => {{courseName}}
+        <br>
+        uppercase => {{courseName | uppercase}}
+    </div>
+    <div class="col-3">
+        courseName => {{courseName}}
+        <br>
+        lowercase => {{courseName | lowercase}}
+    </div>
+    <div class="col-3">
+        studentObj => {{studentObj}}
+        <br>
+        studentObjJson => {{studentObj | json}}
+    </div>
+    <div class="col-3">
+        <!-- {{employeeArray | json}} -->
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        currentDate => {{currentDate}}
+        <br>
+        date only => {{currentDate | date}}
+    </div>
+    <div class="col-3">
+        currentDate => {{currentDate}}
+        <br>
+        date only => {{currentDate | date:'dd-MMM-yy'}}
+    </div>
+    <div class="col-3">
+        currentDate => {{currentDate}}
+        <br>
+        date only => {{currentDate | date:'dd/MM/yyyy'}}
+        <br>
+        time only => {{currentDate | date:'hh:mm:ss'}}
+    </div>
+</div>
+<div class="row">
     <div class="col-2">
         <ul>
-            <li *ngFor="let city of cityList">
-                 {{city}}
-            </li>
+            <li *ngFor="let city of cityList" >{{city}}</li>
         </ul>
     </div>
     <div class="col-5">
-        <button *ngFor="let cityName of cityList" class="btn btn-success mx-1">
+        <button class="btn btn-success mx-1" *ngFor="let cityName of cityList">
             {{cityName}}
         </button>
     </div>
     <div class="col-3">
-        <div *ngFor="let city of cityList">
-            <span>{{city}}</span>
+        <div *ngFor="let cityName of cityList">
+            <span>{{cityName}}</span>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-3">
         <select name="" id="">
-            <option *ngFor="let emp of employeeArray" [value]="emp.empId">
-                {{emp.name}} - {{emp.city}}
+            <option *ngFor="let empl of employeeArray" [value]="empl.empId">
+                {{empl.name}} - {{empl.city}}
             </option>
         </select>
     </div>
-</div>
-<div class="col-5">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Serial No</th>
-                <th>Name</th>
-                <th>City</th>
-                <th>Mobile No</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let employee of employeeArray; let srno = index">
-                <td>{{srno + 1}}</td>
-                <td>{{employee.name}}</td>
-                <td>{{employee.city}}</td>
-                <td>{{employee.contactNo}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="col-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Seria No</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Mobile No</th>
+                    <th>Attendance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employeeArray; let srno = index">
+                    <td>{{srno + 1}}</td>
+                    <td>{{employee.name | na}}</td>
+                    <td>{{employee.city | uppercase}}</td>
+                    <td>{{employee.contactNo}}</td>
+                    <td>
+                        <app-progressbar [progressValue]="employee.attendance"></app-progressbar>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

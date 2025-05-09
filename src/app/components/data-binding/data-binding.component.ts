@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './data-binding.component.css'
 })
 export class DataBindingComponent {
+
   firstName: string = "Mohamed";
   annee: number = 2025;
   isActive: boolean = true;

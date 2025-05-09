@@ -1,36 +1,40 @@
 <div class="container">
+    <h2>User Input</h2>
     <form #form="ngForm" class="row g-3 needs-validation" >
         <div class="col-md-4">
-          <label >First name <span class="text-danger">*</span> </label>
-          <input type="text" #fname="ngModel" required name="firstName" [(ngModel)]="userObj.firstName" class="form-control" >
-          @if (fname.errors?.['required'] && fname.touched && fname.dirty) {
-            <span class="text-danger">This is Required</span>
-          }
+          <label >First name <span class="text-danger"> *</span> </label>
+          <input type="text" name="firstName" #fname="ngModel" required [(ngModel)]="userObj.firstName" class="form-control" >
+          <div class="text-danger">
+            @if (fname.errors?.['required'] && fname.touched && fname.dirty ) {
+                <span>This is required</span>
+            }
+          </div>
+
         </div>
         <div class="col-md-4">
           <label >Last name</label>
-          <input type="text" name="lastName" required minlength="4" #lName="ngModel" [(ngModel)]="userObj.lastName" class="form-control" >
-          <div class="text-danger">
-            <span *ngIf="lName.errors?.['required'] && lName.touched">This is Required</span>
-            <span *ngIf="lName.errors?.['minlength'] && lName.touched">Min Length is 4</span>
-          </div>          
+          <input type="text" name="lastName" required minlength="4" #lname="ngModel" [(ngModel)]="userObj.lastName" class="form-control" >
+        <div class="text-danger">
+            <span *ngIf="lname.errors?.['required'] && lname.touched">This is required</span>
+            <span *ngIf="lname.errors?.['minlength'] && lname.touched">Min Length is 4 characters</span>
+        </div>          
         </div>
         <div class="col-md-4">
           <label >Username</label>
           <div class="input-group has-validation">
             <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
-            <input type="text" name="userName" [(ngModel)]="userObj.userName" class="form-control"  aria-describedby="inputGroupPrepend" >
+            <input type="text" name="userName" #userName="ngModel" [(ngModel)]="userObj.userName" class="form-control" aria-describedby="inputGroupPrepend" >
             
           </div>
         </div>
         <div class="col-md-6">
           <label >City</label>
-          <input type="text" name="city" [(ngModel)]="userObj.city" class="form-control" >
+          <input type="text" name="city" #city="ngModel" [(ngModel)]="userObj.city" class="form-control">
           
         </div>
         <div class="col-md-3">
           <label >State</label>
-          <select class="form-select" name="state" [(ngModel)]="userObj.state" >
+          <select class="form-select" name="state" #state="ngModel" [(ngModel)]="userObj.state" >
             <option selected disabled value="">Choose...</option>
             <option value="Nabeul">Nabeul</option>
             <option value="Tunis">Tunis</option>
@@ -40,16 +44,15 @@
         </div>
         <div class="col-md-3">
           <label >Zip</label>
-          <input type="text" name="zipCode" [(ngModel)]="userObj.zipCode" class="form-control" >
+          <input type="text" class="form-control" name="zipCode" #zipCode="ngModel" [(ngModel)]="userObj.zipCode">
           
         </div>
         <div class="col-12">
           <div class="form-check">
-            <input class="form-check-input" name="isTermsAgreed" [(ngModel)]="userObj.isTermsAgreed" type="checkbox" value="" >
-            <label >
+            <input class="form-check-input" name="isTermsAgreed" #isAgreed="ngModel" [(ngModel)]="userObj.isTermsAgreed" type="checkbox" value="" >
+            <label class="form-check-label" >
               Agree to terms and conditions
             </label>
-            
           </div>
         </div>
         <div class="col-12">

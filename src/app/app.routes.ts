@@ -7,6 +7,8 @@ import { ReactiveFormComponent } from './components/forms/reactive-form/reactive
 import { GetAPIComponent } from './components/API/get-api/get-api.component';
 import { PostApiComponent } from './components/API/post-api/post-api.component';
 import { CustomerComponent } from './components/API/customer/customer.component';
+import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
+import { NgForComponent } from './components/ng-for/ng-for.component';
 
 export const routes: Routes = [
     {
@@ -27,6 +29,10 @@ export const routes: Routes = [
         component:NgClassComponent
     },
     {
+        path:'ng-for',
+        component:NgForComponent
+    },
+    {
         path:'template-form',
         component:TemplateFormComponent
     },
@@ -45,5 +51,9 @@ export const routes: Routes = [
     {
         path:'customer',
         component:CustomerComponent
+    },
+    {
+        path:'life-cycle',
+        component:LifecycleComponent
     }
 ];

@@ -1,3 +1,13 @@
+<!-- <div class="row p-3">
+    <div class="col-4">
+        <app-progressbar [progressValue]="30"></app-progressbar>
+    </div>
+</div>-->
+<div class="row">
+    <div class="col-12 text-center">
+        <app-tabs [tabList]="customerTabs"></app-tabs>
+    </div>
+</div>
 <div class="row">
     <div class="col-8">
         <div class="card">
@@ -60,11 +70,10 @@
                         <button class="btn btn-secondary">Reset</button>
                     </div>
                     <div class="col-6 text-center">
-                        <button class="btn btn-success" (click)="onSaveCustomer()">Save Customer</button>
+                        <button class="btn btn-secondary" (click)="onSaveCustomer()">Save Customer</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
 </div>

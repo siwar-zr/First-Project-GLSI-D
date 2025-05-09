@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { AdminComponent } from './components/admin/admin.component';
+import { AdminComponent } from "./components/admin/admin.component";
 import { UserComponent } from './components/user/user.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { NgIfComponent } from "./components/ng-if/ng-if.component";
@@ -15,5 +15,5 @@ import { NgStyleComponent } from "./components/ng-style/ng-style.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'firstProjectGlsiD';
+  title = 'firstProject';
 }

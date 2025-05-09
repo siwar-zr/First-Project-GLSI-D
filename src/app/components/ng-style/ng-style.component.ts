@@ -9,16 +9,17 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './ng-style.component.css'
 })
 export class NgStyleComponent {
-  div1BackColor : string ='';
+
+  div1BckColor : string = '';
   isChecked : boolean = false;
-  myCss : any = {
+  myCss : any ={
     'background-color':'red',
     'width':'200px',
     'height':'200px'
   }
 
-  addDiv1Color(color : string){
-    this.div1BackColor = color;
+  addDiv1Color(color: string){
+    this.div1BckColor = color;
   }
 
 }

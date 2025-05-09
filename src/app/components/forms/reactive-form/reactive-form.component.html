@@ -1,11 +1,11 @@
 <div class="container">
-    <form class="row g-3 needs-validation" (ngSubmit)="onUserSave()" [formGroup]="userForm">
+    <form class="row g-3 needs-validation" (ngSubmit)="onUserSave()" [formGroup]="userForm" >
         <div class="col-md-4">
           <label for="validationCustom01" class="form-label">First name</label>
           <input type="text" formControlName="fName" class="form-control" id="validationCustom01" value="Mark" >
           <div class="text-danger">
-            @if (userForm.controls['fName'].errors?.['required'] && userForm.controls['fName'].touched) {
-              <span> This is Required</span>
+            @if(userForm.controls['fName'].errors?.['required'] && userForm.controls['fName'].touched){
+              <span>This is required</span>
             }
           </div>
         </div>
@@ -13,11 +13,11 @@
           <label for="validationCustom02" class="form-label">Last name</label>
           <input type="text" formControlName="lName" class="form-control" id="validationCustom02" value="Otto" >
           <div class="text-danger">
-            @if (userForm.controls['lName'].errors?.['required'] && userForm.controls['lName'].touched) {
-              <span> This is Required</span>
+            @if(userForm.controls['lName'].errors?.['required']){
+              <span>This is required</span>
             }
-            @if (userForm.controls['lName'].errors?.['minlength'] ) {
-              <span> Min Length is 5</span>
+            @if(userForm.controls['lName'].errors?.['minlength']){
+              <span>Min Length is 5 chars</span>
             }
           </div>
         </div>
@@ -59,7 +59,7 @@
         </div>
         <div class="col-12">
           <div class="form-check">
-            <input class="form-check-input" formControlName="isAgree" type="checkbox" value="" id="invalidCheck" >
+            <input class="form-check-input" formControlName="isAgreed" type="checkbox" value="" id="invalidCheck" >
             <label class="form-check-label" for="invalidCheck">
               Agree to terms and conditions
             </label>
@@ -73,3 +73,4 @@
         </div>
       </form>
 </div>
+

@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-3 p-4" [ngStyle]="{'background-color':div1BackColor,'color':'blue'}">
+    <div class="col-3 p-4" [ngStyle]="{'background-color':div1BckColor,'color': 'blue'}">
         Div 1
     </div>
     <div class="col-3 p-4" [ngStyle]="{'background-color':isChecked==true?'teal':'blue'}">
@@ -11,7 +11,7 @@
 </div>
 <div class="row pt-4">
     <div class="col-3">
-        <button class="btn btn-success" (click)="addDiv1Color('green')">Green</button>
+        <button class="btn btn-success" (click)="addDiv1Color('green')" >Green</button>
         <button class="btn btn-danger" (click)="addDiv1Color('red')">Red</button>
     </div>
     <div class="col-3">

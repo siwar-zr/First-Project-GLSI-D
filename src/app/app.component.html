@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" routerLink="admin" >Admin</a>
+            <a class="nav-link active" routerLink="admin">Admin</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="'dataBinding'">Data-Binding</a>
@@ -15,13 +15,16 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="ng-class">Ng-Class</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="ng-for">Ng-For</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              forms
+              Forms
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" routerLink="template-form">Template Form</a></li>
-              <li><a class="dropdown-item" routerLink="reactive-form">Reactive Form</a></li>
+              <li><a class="dropdown-item" routerLink="template-form" >Template-Form</a></li>
+              <li><a class="dropdown-item" routerLink="reactive-form" >Reactive-Form</a></li>
               
             </ul>
           </li>
@@ -30,12 +33,13 @@
               API Call
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" routerLink="get-api">GET-api</a></li>
-              <li><a class="dropdown-item" routerLink="post-api">POST-api</a></li>
-              <li><a class="dropdown-item" routerLink="customer">Customer</a></li>
-              
-              
+              <li><a class="dropdown-item" routerLink="get-api" >GET-api</a></li>
+              <li><a class="dropdown-item" routerLink="post-api" >POST-api</a></li>
+              <li><a class="dropdown-item" routerLink="customer" >Customer</a></li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="life-cycle">life-cycle</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
