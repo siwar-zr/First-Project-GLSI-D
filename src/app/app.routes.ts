@@ -9,51 +9,66 @@ import { PostApiComponent } from './components/API/post-api/post-api.component';
 import { CustomerComponent } from './components/API/customer/customer.component';
 import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
 import { NgForComponent } from './components/ng-for/ng-for.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { authGuard } from './guard/auth.guard';
 
 export const routes: Routes = [
     {
         path:'',
-        redirectTo:'dataBinding',
+        redirectTo:'login',
         pathMatch:'full'
     },
     {
-        path:'admin',
-        component:AdminComponent
+        path:'login',
+        component:LoginComponent
     },
     {
-        path:'dataBinding',
-        component:DataBindingComponent
-    },
-    {
-        path:'ng-class',
-        component:NgClassComponent
-    },
-    {
-        path:'ng-for',
-        component:NgForComponent
-    },
-    {
-        path:'template-form',
-        component:TemplateFormComponent
-    },
-    {
-        path:'reactive-form',
-        component:ReactiveFormComponent
-    },
-    {
-        path:'get-api',
-        component:GetAPIComponent
-    },
-    {
-        path:'post-api',
-        component:PostApiComponent
-    },
-    {
-        path:'customer',
-        component:CustomerComponent
-    },
-    {
-        path:'life-cycle',
-        component:LifecycleComponent
+        path:'',
+        component:LayoutComponent,
+        canActivate: [authGuard],
+        children:[
+            {
+                path:'admin',
+                component:AdminComponent,
+            },
+            {
+                path:'dataBinding',
+                component:DataBindingComponent
+            },
+            {
+                path:'ng-class',
+                component:NgClassComponent
+            },
+            {
+                path:'ng-for',
+                component:NgForComponent
+            },
+            {
+                path:'template-form',
+                component:TemplateFormComponent
+            },
+            {
+                path:'reactive-form',
+                component:ReactiveFormComponent
+            },
+            {
+                path:'get-api',
+                component:GetAPIComponent
+            },
+            {
+                path:'post-api',
+                component:PostApiComponent
+            },
+            {
+                path:'customer',
+                component:CustomerComponent
+            },
+            {
+                path:'life-cycle',
+                component:LifecycleComponent
+            }
+        ]
     }
+    
 ];
